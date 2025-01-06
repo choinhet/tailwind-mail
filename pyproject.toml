@@ -1,7 +1,7 @@
 [project]
 name = "tailwind-mail"
 version = "0.1.0"
-description = "Tailwind CSS for FastAPI"
+description = "A simple toolkit for building email templates using Tailwind CSS."
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
