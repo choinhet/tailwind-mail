@@ -1,0 +1,14 @@
+[project]
+name = "tailwind-mail"
+version = "0.1.0"
+description = "Tailwind CSS for FastAPI"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi[standard]>=0.115.6",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "fastapi-cli>=0.0.7",
+]

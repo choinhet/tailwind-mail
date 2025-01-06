@@ -1,0 +1,23 @@
+version: "3"
+
+vars:
+  OUTPUT: '{{default .CLI_ARGS (default "output.html" .OUTPUT)}}'
+
+tasks:
+  tailwind:
+    cmds:
+      - ./tailwind_mail/resources/win-cli -i ./tailwind_mail/static/input.css -o ./tailwind_mail/static/output.css --watch --minify
+    
+  serve:
+    cmds:
+      - uv run python -m fastapi dev tailwind_mail/main.py
+    
+  build:
+    cmds:
+      - uv run python -m tailwind_mail.build {{.OUTPUT}}
+
+  dev:
+    deps: [serve, tailwind]
+    cmds:
+      - echo "Development server running..."
+    parallel: true
